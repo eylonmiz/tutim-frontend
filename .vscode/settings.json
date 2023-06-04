@@ -1,5 +1,6 @@
 {
   "eslint.workingDirectories": [
+    { "pattern": "frontend/*/" },
     { "pattern": "apps/*/" },
     { "pattern": "packages/*/" }
   ]
