@@ -6,6 +6,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log("components", components)
+
   if (req.method !== "GET") {
     return res.status(405).end()
   }
