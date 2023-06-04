@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
 import type { Metadata } from "next"
@@ -26,7 +25,7 @@ interface DocPageProps {
 
 async function getDocFromParams({ params }: DocPageProps) {
   const slug = params.slug?.join("/") || ""
-  const doc = allDocs.find((doc) => doc.slugAsParams === slug)
+  const doc = null
 
   if (!doc) {
     null

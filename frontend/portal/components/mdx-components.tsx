@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Image from "next/image"
-import { useMDXComponent } from "next-contentlayer/hooks"
 import { NpmCommands } from "types/unist"
 
 import { Event } from "@/lib/events"
@@ -228,11 +227,9 @@ interface MdxProps {
 }
 
 export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code)
-
   return (
     <div className="mdx">
-      <Component components={components} />
+      <div>removed</div>
     </div>
   )
 }
