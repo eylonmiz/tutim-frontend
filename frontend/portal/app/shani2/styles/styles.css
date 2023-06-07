@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content_bg {
+  background-image: url(../assets/cover.svg);
+  background-position: 50% 8%;
+  background-size: inherit;
+}
