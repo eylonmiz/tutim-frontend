@@ -32,6 +32,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "app/lior/components/Register.tsx"  ],
   "exclude": ["node_modules", "./scripts/build-components.ts"]
 }

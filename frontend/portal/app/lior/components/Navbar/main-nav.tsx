@@ -29,7 +29,7 @@ export function MainNav({
         Login
       </Link>
       <Link
-        href="#home"
+        href="../lior#home"
         className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         Home
