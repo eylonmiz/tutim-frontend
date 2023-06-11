@@ -32,6 +32,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "app/sivan/tutimWizard.tsx", "app/sivan/pages/home.tsx", "app/sivan/pages/registration/index.tsx"  ],
   "exclude": ["node_modules", "./scripts/build-components.ts"]
 }

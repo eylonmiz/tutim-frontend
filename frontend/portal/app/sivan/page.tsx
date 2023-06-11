@@ -1,18 +1,20 @@
-import React from "react";
-import PageColor from './components/pageColor';
-import { AvatarDemo } from './components/avatar';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-function Home() {
-  
+// Import your components
+import Home from './pages/home';
+import Registration from './pages/registration';
 
-      return (
-        <>
-            <AvatarDemo />
-        </>
-        
 
-      )
-    
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route  path="/sivan" element={<Home />} />
+        <Route path="/sivan/Registration" element={<Registration />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default Home;
+export default App;
