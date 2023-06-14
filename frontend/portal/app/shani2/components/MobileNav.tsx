@@ -12,7 +12,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { logo } from "../assets"
 import { navLinks } from "../constants"
 
-const PATH = "shani"
+const PATH = "shani2"
 
 const MobileNav = () => {
   const [open, setOpen] = React.useState(false)
@@ -27,13 +27,14 @@ const MobileNav = () => {
           <AlignRight
             className="h-[28px] w-[28px]"
             color="pink"
-            stroke-width="3"
+            strokeWidth="3"
             onClick={() => setOpen(!open)}
           />
         </Button>
       </SheetTrigger>
       <SheetContent size="xl" position="left" className="pr-0">
         <Link
+          as={"image"}
           href={`/${PATH}/`}
           className="flex items-center"
           onClick={() => {

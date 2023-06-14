@@ -10,7 +10,7 @@ import useScrolled from "../hooks/useScrolled"
 import styles from "../styles"
 import MobileNav from "./MobileNav"
 
-const PATH = "shani"
+const PATH = "shani2"
 
 const Navbar = () => {
   const [active, setActive] = useState<NavLinks | string>("")
@@ -27,6 +27,7 @@ const Navbar = () => {
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
           <Link
+            as={"image"}
             href={`/${PATH}/`}
             className="flex items-center gap-2"
             onClick={() => {
