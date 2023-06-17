@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Metadata } from "next"
 
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
@@ -22,8 +23,11 @@ export const metadata: Metadata = {
 }
 
 export default function MusicPage() {
+  const [color, setColor] = useState("Purple"); // Example state with initial value "blue"
+
   return (
     <>
+    <div className={`bg-${color}`}>
       <div className="md:hidden">
         <Image
           src="/examples/music-light.png"
@@ -148,6 +152,7 @@ export default function MusicPage() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

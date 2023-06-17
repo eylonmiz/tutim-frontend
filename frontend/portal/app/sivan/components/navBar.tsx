@@ -18,6 +18,18 @@ import { Icons } from "@/components/icons"
 import { FormProvider } from "@tutim/headless";
 import { TutimWizard, defaultFields } from "@tutim/fields";
 
+
+const colors = [
+  { name: 'Aquamarine', value: 'Aquamarine' },
+  { name: 'BlueViolet', value: 'BlueViolet' },
+  { name: 'Chartreuse', value: 'Chartreuse' },
+  { name: 'CornflowerBlue', value: 'CornflowerBlue' },
+];
+
+interface NavigationMenuDemoProps {
+  onColorChange: (color: string) => void;
+}
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -57,7 +69,7 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 
-export function NavigationMenuDemo() {
+export function NavigationMenuDemo({ onColorChange }: NavigationMenuDemoProps) {
   const [color, setColor] = useState('Purple');
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
 
@@ -65,13 +77,11 @@ export function NavigationMenuDemo() {
     setShowRegistrationForm(true);
   };
 
-  const divStyle = {
-    backgroundColor: color,
-    width: '100vw', // Use viewport width
-    height: '100vh', // Use viewport height
-    margin: 0, // Remove default margin
-    padding: 0, // Remove default padding
+  const handleColorClick = (color: string) => {
+    onColorChange(color);
   };
+
+  
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -80,27 +90,11 @@ export function NavigationMenuDemo() {
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               
-              <ListItem >
-                <button onClick={() => setColor('Aquamarine')}>
-                  Aquamarine
-                </button>
-              </ListItem>
-              <ListItem >
-                <button onClick={() => setColor('BlueViolet')}>
-                  BlueViolet
-                </button>
-              </ListItem>
-              <ListItem >
-                <button onClick={() => setColor('Chartreuse')}>
-                  Chartreuse
-                </button>
-              </ListItem>
-              <ListItem >
-                <button onClick={() => setColor('CornflowerBlue')}>
-                  CornflowerBlue
-                </button>
-              </ListItem>
-
+            {colors.map((color) => (
+                <ListItem key={color.name} onClick={() => handleColorClick(color.value)}>
+                  {color.name}
+                </ListItem>
+              ))}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -129,10 +123,10 @@ export function NavigationMenuDemo() {
               <TutimWizard onSubmit={console.log} formId="823" />
             </FormProvider>
           ) : (
-            <Link href="/registration" target="_blank" rel="noopener noreferrer">
+            <Link href="sivan/register" rel="noopener noreferrer">
               <NavigationMenuLink
                 className={navigationMenuTriggerStyle()}
-                onClick={handleRegistrationClick}
+                // onClick={handleRegistrationClick}
               >
                 Registration
               </NavigationMenuLink>
