@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { useState } from "react"
+import { useState, useEffect  } from "react"
 import Link from "next/link"
 
 import { cn } from "@/lib/utils"
@@ -77,9 +77,20 @@ export function NavigationMenuDemo({ onColorChange }: NavigationMenuDemoProps) {
     setShowRegistrationForm(true);
   };
 
+  useEffect(() => {
+    const storedColor = localStorage.getItem('selectedColor');
+    if (storedColor && colors.some(color => color.name === storedColor)) {
+      setColor(storedColor);
+      onColorChange(storedColor);
+    }
+  }, []);
+
   const handleColorClick = (color: string) => {
+    setColor(color);
     onColorChange(color);
+    localStorage.setItem('selectedColor', color);
   };
+  
 
   
   return (
