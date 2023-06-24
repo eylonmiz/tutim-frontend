@@ -1,16 +1,27 @@
 "use client"
 
-import React, { PropsWithChildren } from "react"
+import React from "react"
 
 import { Button } from "@/components/ui/button"
 
 import styles from "../../styles"
 
-const SubmitButton: React.FC<{ value: string }> = ({ value }) => {
+const SubmitButton: React.FC<{
+  value: string
+  handlemessage: () => void
+  isLoading: boolean
+}> = ({ value, handlemessage, isLoading }) => {
+  const handleSendClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    handlemessage()
+  }
+
   return (
     <div className="ml-4">
       <Button
         className={`flex shrink-0 items-center justify-center rounded-xl px-4 py-1 text-white ${styles.gradientBg}`}
+        onClick={handleSendClick}
+        disabled={isLoading}
       >
         <span className="hidden md:flex"> Send </span> 🍓
       </Button>

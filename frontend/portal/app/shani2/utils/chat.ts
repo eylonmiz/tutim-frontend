@@ -10,15 +10,23 @@ export const uniqueId = () => {
 
 export const createChatMessage = (
   message: string,
-  options: string[],
   type: MessageType,
-  time: Date
+  options?: string[]
 ) => {
   return {
     message,
-    options,
     type,
+    options,
     id: uniqueId(),
     time: new Date(),
-  }
+  } as Message
+}
+
+export const createUserMessage = (message: string) => {
+  return {
+    message,
+    type: "user",
+    id: uniqueId(),
+    time: new Date(),
+  } as Message
 }

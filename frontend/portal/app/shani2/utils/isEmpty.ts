@@ -1,3 +1,3 @@
 export const isEmpty = (
-  val: Record<string, unknown> | any[] | null | undefined
-) => val == null || !(Object.keys(val) || val).length
+  val: Record<string, unknown> | any[] | null | undefined | string
+) => val == null || val == "" || !(Object.keys(val) || val).length

@@ -25,4 +25,4 @@ const Content: React.FC<{ messages: Message[] }> = ({ messages }) => {
   )
 }
 
-export default Content
+export default React.memo(Content)

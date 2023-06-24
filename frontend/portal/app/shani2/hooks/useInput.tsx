@@ -10,10 +10,15 @@ const useInput = (initialValue: string): InputRetuneType => {
     if (inputRef.current) setValue(inputRef.current.value)
   }, [])
 
+  const clearInput = useCallback(() => {
+    setValue("")
+  }, [])
+
   return {
     value,
     onChange: handleChange,
     ref: inputRef,
+    clearInput,
   }
 }
 

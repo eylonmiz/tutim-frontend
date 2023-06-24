@@ -1,6 +1,6 @@
 "use client"
 
-import React, { InputHTMLAttributes, forwardRef } from "react"
+import React, { InputHTMLAttributes, KeyboardEvent, forwardRef } from "react"
 import { Smile } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
   onChange: () => void
+  handlemessage: () => void
   // ref: React.RefObject<HTMLInputElement>
 }
 
@@ -17,6 +18,12 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
 ) => {
   const { ...inputProps } = props
 
+  const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      inputProps.handlemessage()
+    }
+  }
+
   return (
     <>
       <div className="ml-4 grow">
@@ -24,6 +31,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <input
             ref={ref}
             {...inputProps}
+            onKeyPress={handleKeyPress}
             type="text"
             className="flex h-10 w-full rounded-xl border pl-4 focus:border-indigo-300 focus:outline-none"
           />

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react"
+import React, { memo, useCallback, useEffect, useMemo, useState } from "react"
 
 import { scriptHistory } from "../constants"
 
@@ -6,6 +6,7 @@ interface ChatBotReturnType {
   messages: Message[]
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>
   onSubmit: () => void
+  addMessage: (m: Message) => void
 }
 
 {
@@ -31,10 +32,17 @@ const useChatbot = (): ChatBotReturnType => {
     console.log("Current values:", messages)
   }, [messages])
 
+  const addMessage = useCallback((newMessage: Message) => {
+    setMessages((messages) => [...messages, newMessage])
+  }, [])
+
+  console.log("messages", messages)
+
   return {
     messages,
     setMessages,
     onSubmit,
+    addMessage,
   }
 }
 

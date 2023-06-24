@@ -8,4 +8,4 @@ const FooterInput: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   )
 }
 
-export default FooterInput
+export default React.memo(FooterInput)

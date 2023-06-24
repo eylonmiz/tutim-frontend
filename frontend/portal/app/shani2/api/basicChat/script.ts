@@ -1,5 +1,9 @@
 export const chatScript = [
   {
+    question: "ping",
+    answer: "pong",
+  },
+  {
     question: "what do you know about me",
     answer:
       "nothing.. i'm just a static script. but i'll be grader then life when i'm done here",
