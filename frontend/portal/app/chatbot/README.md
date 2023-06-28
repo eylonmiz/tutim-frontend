@@ -10,11 +10,10 @@
 - [x]`useInput hook`: input logic for users to enter and send messages and implant it in chatBot main component.
 - [x] `ChatInput and sendButton`: Implement an input click button and key parss Enter.
 - [x] `useLocalStorage`: save current messages
-- [x]
+- [x]`Data Fetching of bot response and create nextAPI`: Implement bot response API using script array after user send a message.
 - [x]
 
 ### To Do List
 
-- [x] `Data Fetching of bot response and create nextAPI`: Implement bot response API using script array after user send a message.
 - [x] `ChatButtonPopUp`: butoon pop up wraps the mainChatBot component , handle open and close
 - [x] `Scrolling and Pagination`: Implement scrolling and pagination functionality for the list of incoming chat messages

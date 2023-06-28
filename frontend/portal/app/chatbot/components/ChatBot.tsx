@@ -1,10 +1,11 @@
 "use client"
 
-import React, { useCallback, useMemo, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 
 import useChatbot from "../hooks/useChatbot"
+import useFetch from "../hooks/useFetch"
 import useInput from "../hooks/useInput"
-import { createUserMessage } from "../utils/chat"
+import { createChatMessage, createUserMessage } from "../utils/chat"
 import { isEmpty } from "../utils/isEmpty"
 import ChatBotContainer from "./ChatBotContainer"
 import Content from "./Content"
@@ -16,6 +17,7 @@ const ChatBot = () => {
   const { messages, addMessage } = useChatbot()
   const [loading, setLoading] = useState<boolean>(false)
   const memoizedMessages: Message[] = useMemo(() => messages, [messages])
+  const { data, error, postRequest, clear } = useFetch<Message>()
 
   const handleSendMessage = async () => {
     if (isEmpty(inputProps.value)) return
@@ -24,8 +26,17 @@ const ChatBot = () => {
     addMessage(userMessage)
     inputProps.clear()
 
-    //ToDo - api call and add bot response to massage array.
+    //fetch Bot api
+    await postRequest("http://localhost:3001/chatbot/api/chat", userMessage)
   }
+
+  useEffect(() => {
+    if (!isEmpty(data) || !isEmpty(error)) {
+      addMessage(createChatMessage(String(data?.message), "bot"))
+      clear()
+      setLoading((loading) => !loading)
+    }
+  }, [data, error])
 
   const handleEnter = () => {
     console.log("Enter key pressed", inputProps)
