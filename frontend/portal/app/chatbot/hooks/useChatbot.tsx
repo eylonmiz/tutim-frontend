@@ -18,7 +18,7 @@ const useChatbot = (): ChatBotReturnType => {
   const [messages, setMessages] = useState<Message[]>([])
 
   useEffect(() => {
-    if (messages.length === 0) setMessages(messages)
+    if (messages.length === 0) setMessages(scriptHistory)
     return () => {
       //there is noting to clear
     }
