@@ -3,7 +3,7 @@
 ### Committed
 
 - [x] `ChatContainer`: a container component to hold the chat interface.
-- [x]
+- [x]`ChatMessage`: a component for chat message of bot and of users (2 diffarent components).
 - [x]
 - [x]
 - [x]
@@ -11,7 +11,6 @@
 
 ### To Do List
 
-- [x] `ChatMessage`: a component for chat message of bot and of users (2 diffarent components).
 - [x] `ChatMessageContent and useChatBoot hook`: a component to display the list of chat messages and hook thet heandls massages (initalize massages, add massages, save masages (local storag)
 - [x] `FotterInputContainer`: a container component to hold the input and send button interface.
 - [x] `useInput hook`: input logic for users to enter and send messages.
