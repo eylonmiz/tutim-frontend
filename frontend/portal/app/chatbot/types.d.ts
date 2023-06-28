@@ -13,3 +13,10 @@ interface Message extends BaseMessage {
   delay?: number
   withAvatar?: boolean
 }
+
+interface InputRetuneType extends InputHTMLAttributes<HTMLInputElement> {
+  value: string
+  onChange: () => void
+  ref: React.RefObject<HTMLInputElement>
+  clear: () => void
+}

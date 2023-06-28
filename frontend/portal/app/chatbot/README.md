@@ -7,12 +7,14 @@
 - [x]`ChatMessageContent`: a component to display the list of chat messages
 - [x]`useChatBoot hook`: hook that handles massages, initialize massages, add massages
 - [x]`FotterInputContainer`: a container component to hold the input and send button interface.
+- [x]`useInput hook`: input logic for users to enter and send messages and implant it in chatBot main component.
+- [x] `ChatInput and sendButton`: Implement an input click button and key parss Enter.
+- [x]
+- [x]
 - [x]
 
 ### To Do List
 
-- [x] `useInput hook`: input logic for users to enter and send messages.
-- [x] `ChatInput and sendButton`: Implement an input click button and key parass Enter.
 - [x] `Data Fetching of bot response and create nextAPI`: Implement bot response API using script array after user send a message.
 - [x] `ChatButtonPopUp`: butoon pop up wraps the mainChatBot component , handle open and close
 - [x] `Scrolling and Pagination`: Implement scrolling and pagination functionality for the list of incoming chat messages
