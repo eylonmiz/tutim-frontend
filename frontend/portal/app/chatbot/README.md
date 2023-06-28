@@ -5,7 +5,7 @@
 - [x] `ChatContainer`: a container component to hold the chat interface.
 - [x]`ChatMessage`: a component for chat message of bot and of users (2 diffarent components).
 - [x]`ChatMessageContent`: a component to display the list of chat messages
-- [x]
+- [x]`useChatBoot hook`: hook that handles massages, initialize massages, add massages
 - [x]
 - [x]
 
