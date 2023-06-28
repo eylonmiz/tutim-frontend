@@ -1,6 +1,7 @@
 import React, { memo, useCallback, useEffect, useMemo, useState } from "react"
 
 import { scriptHistory } from "../constants"
+import { useLocalStorage } from "./useLocalStorage"
 
 interface ChatBotReturnType {
   messages: Message[]
@@ -16,9 +17,14 @@ interface ChatBotReturnType {
 }
 const useChatbot = (): ChatBotReturnType => {
   const [messages, setMessages] = useState<Message[]>([])
+  const [storedMessages, setStoredMessages] = useLocalStorage<Message>(
+    "chat-messages",
+    scriptHistory
+  )
 
   useEffect(() => {
-    if (messages.length === 0) setMessages(scriptHistory)
+    if (storedMessages.length === 0) setMessages(scriptHistory)
+    else setMessages(storedMessages)
     return () => {
       //there is noting to clear
     }
@@ -26,6 +32,8 @@ const useChatbot = (): ChatBotReturnType => {
 
   const addMessage = useCallback((newMessage: Message) => {
     setMessages((messages) => [...messages, newMessage])
+    const updatedNames = [...storedMessages, newMessage]
+    setStoredMessages(updatedNames)
   }, [])
 
   return {

@@ -9,7 +9,7 @@
 - [x]`FotterInputContainer`: a container component to hold the input and send button interface.
 - [x]`useInput hook`: input logic for users to enter and send messages and implant it in chatBot main component.
 - [x] `ChatInput and sendButton`: Implement an input click button and key parss Enter.
-- [x]
+- [x] `useLocalStorage`: save current messages
 - [x]
 - [x]
 
