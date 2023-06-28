@@ -11,9 +11,9 @@
 - [x] `ChatInput and sendButton`: Implement an input click button and key parss Enter.
 - [x] `useLocalStorage`: save current messages
 - [x]`Data Fetching of bot response and create nextAPI`: Implement bot response API using script array after user send a message.
-- [x]
+- [x]`ChatButtonPopUp`: style butoon pop up wraps the mainChatBot component , handle open and close
 
 ### To Do List
 
-- [x] `ChatButtonPopUp`: butoon pop up wraps the mainChatBot component , handle open and close
+- [x] `ChatButtonPopUp`: continue styling , fix chat layout and add/fix functionally to seport pop up btn
 - [x] `Scrolling and Pagination`: Implement scrolling and pagination functionality for the list of incoming chat messages
