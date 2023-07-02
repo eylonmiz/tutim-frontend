@@ -19,6 +19,6 @@ export async function POST(request: Request) {
 
   return NextResponse.json({
     message: script.answer || "not found",
-    options: script?.options,
+    options: script.options,
   })
 }

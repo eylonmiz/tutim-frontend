@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import useChatbot from "../hooks/useChatbot"
 import useFetch from "../hooks/useFetch"
@@ -16,12 +16,11 @@ import SubmitButton from "./footer/SubmitButton"
 const ChatBot = () => {
   const { messages, addMessage } = useChatbot()
   const [loading, setLoading] = useState<boolean>(false)
-  const memoizedMessages: Message[] = useMemo(() => messages, [messages])
   const { data, error, postRequest, clear } = useFetch<Message>()
 
   const handleSendMessage = async () => {
     if (isEmpty(inputProps.value)) return
-    setLoading((loading) => !loading)
+    setLoading(true)
     const userMessage = createUserMessage(inputProps.value)
     addMessage(userMessage)
     inputProps.clear()
@@ -34,7 +33,7 @@ const ChatBot = () => {
     if (!isEmpty(data) || !isEmpty(error)) {
       addMessage(createChatMessage(String(data?.message), "bot"))
       clear()
-      setLoading((loading) => !loading)
+      setLoading(false)
     }
   }, [data, error])
 
@@ -48,7 +47,7 @@ const ChatBot = () => {
   return (
     <>
       <ChatBotContainer>
-        <Content messages={memoizedMessages} />
+        <Content messages={messages} />
         <FooterInput>
           <Input {...inputProps} />
           <SubmitButton

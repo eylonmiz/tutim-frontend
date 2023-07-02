@@ -17,14 +17,14 @@ const ChatbotPopUp = () => {
       <StickyButton onHandleClick={handleBot} />
       {open && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-25"
+          className="fixed bottom-20 right-28 flex w-full justify-end md:w-[80%]"
           onClick={() => console.log("close")}
         >
           <div className="w-8/12 rounded bg-white p-2">
             <h1 className="text-center text-xl font-semibold text-gray-700">
               Tutim Chat
             </h1>
-            <ChatBoxModal />
+            <ChatBoxModal hight={600} />
           </div>
         </div>
       )}

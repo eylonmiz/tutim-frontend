@@ -13,6 +13,7 @@
 - [x]`Data Fetching of bot response and create nextAPI`: Implement bot response API using script array after user send a message.
 - [x]`ChatButtonPopUp`: style butoon pop up wraps the mainChatBot component , handle open and close
 - [x] `ChatButtonPopUp`: continue styling , fix chat layout and add/fix functionally to seport pop up btn
+- [x] `Final Chatbot commit`: fixes in circle pop up button and side popup box, add dynamic hight of chatBotModal component, remove localStorage hook and update in the usChatbot hook , delete unUsed components calls in pages
 
 ### To Do List
 
